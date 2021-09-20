@@ -1,0 +1,35 @@
+package practiceProblems;
+
+public class OddEvenList {
+
+	private static ListNode solution1(ListNode head) {
+		if (head == null || head.next == null || head.next.next == null) {
+			return head;
+		}
+		int i = 1;
+		ListNode odd = head;
+		ListNode even = head.next;
+		for (ListNode curr = even.next; curr.next != null; curr = curr.next, ++i) {
+			if(i % 2 == 1) {
+				ListNode temp = odd.next;
+				odd.next = curr;
+				even.next = curr.next;
+				curr.next = temp;
+				odd = curr;
+				curr = odd.next;				
+			}
+			else {
+				even = curr;
+			}
+		}
+		return head;
+	}
+
+	public static void main(String[] args) {
+		int[] arr = new int[] { 1,2,3,4,5};
+		ListNode node = new ListNode();
+		node = node.createList(arr);
+		node = solution1(node);
+		node.printList(node);
+	}
+}

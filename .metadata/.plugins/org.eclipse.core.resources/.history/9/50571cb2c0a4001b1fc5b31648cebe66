@@ -1,0 +1,61 @@
+package test;
+
+public class MergeSortedArrays {
+
+	private static int[] rotateArray(int[] input, int start, int end) {
+		int temp = 0;
+		for (int i = start; i < (start + end) / 2; ++i) {
+			temp = input[i];
+			input[i] = input[end - i];
+			input[end - i] = temp;
+		}
+		printArray(input);
+		for (int i = start + 1; i < (start + 1 + end) / 2; ++i) {
+			temp = input[i];
+			input[i] = input[end - i];
+			input[end - i] = temp;
+		}
+		return input;
+	}
+
+	private static void printArray(int[] arr) {
+		System.out.println();
+		for (int i = 0; i < arr.length; ++i) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+
+	private static void rotationLogic() {
+		int[] arr = new int[] { 1, 2, 3, 4, 5, 6 };
+		int k = 1;
+		int n = arr.length;
+		int temp = 0;
+		for (int i = 0; i < n / 2; ++i) {
+			temp = arr[i];
+			arr[i] = arr[n - 1 - i];
+			arr[n - 1 - i] = temp;
+		}
+
+		for (int i = k; i < (n - k) / 2; ++i) {
+			temp = arr[i];
+			arr[i] = arr[n - i];
+			arr[n - 1 - i] = temp;
+		}
+		printArray(arr);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		rotationLogic();
+		/*
+		 * int[] nums1 = new int[] { 1, 3, 5, 0, 0, 0 }; int[] nums2 = new int[] { 2, 4,
+		 * 6 }; int m = 3;// nums1.length; int n = nums2.length; int p = nums1.length;
+		 * for (int i = m; i < m + n; ++i) { nums1[i] = nums2[i - n]; }
+		 * printArray(nums1); int j = 0; for (int i = 0; i < m; ++i) { if (nums1[i] >
+		 * nums1[m + j]) { rotateArray(nums1, i, m + j); } } System.out.println("\n");
+		 * for (int i = 0; i < nums1.length; ++i) { System.out.print(nums1[i] + " "); }
+		 */
+
+	}
+
+}

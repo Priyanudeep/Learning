@@ -1,0 +1,22 @@
+package practiceProblems;
+
+public class SplitListToParts {
+
+	private static ListNode[] solution1(ListNode head, int k) {
+		ListNode[] result = new ListNode[k];
+		ListNode curr = head;
+		while (curr != null) {
+			++len;
+			curr = curr.next;
+		}
+
+		return result;
+	}
+
+	public static void main(String[] args) {
+		int[] arr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		ListNode node = new ListNode();
+		node = node.createList(arr);
+		var result = solution1(node, 3);
+	}
+}

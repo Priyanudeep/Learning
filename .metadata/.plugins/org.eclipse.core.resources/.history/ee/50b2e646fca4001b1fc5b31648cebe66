@@ -1,0 +1,52 @@
+package test;
+
+public class RemoveDupes {
+
+	private static int[] rotateArray(int[] input, int start, int end) {
+		int l = input.length;
+		int k = end - start;
+		int temp = 0;
+		for (int i = start, j = 0; i <= (start + end) / 2; ++i, ++j) {
+			temp = input[i];
+			input[i] = input[end - j];
+			input[end - j] = temp;
+		}
+		printArray(input);
+		for (int i = start, j = 0; i < k / 2; ++i, ++j) {
+			temp = input[i];
+			input[i] = input[k - 1 - j];
+			input[k - 1 - j] = temp;
+		}
+		printArray(input);
+		return input;
+	}
+
+	private static void printArray(int[] input) {
+		System.out.println();
+		for (int i = 0; i < input.length; ++i) {
+			System.out.print(input[i]);
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// in-memory array rotation technique.
+		// Encounter dupe, rotate. Increment a value
+		int[] nums = new int[] { 1, 1, 2, 2, 3, 4, 4 };
+		System.out.print("Given Input: ");
+		printArray(nums);
+		int l = nums.length;
+		int a = 0;
+		for (int i = 0; i <= l - 2; ++i) {
+			if (nums[i] == nums[i + 1]) {
+				++a;
+				rotateArray(nums, i, l - 1 - a);
+			}
+		}
+		System.out.println(a);
+		for (int i = 0; i < l; ++i) {
+			System.out.print(nums[i]);
+		}
+	}
+
+}

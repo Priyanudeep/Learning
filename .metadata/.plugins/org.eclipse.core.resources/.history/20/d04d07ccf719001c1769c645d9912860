@@ -1,0 +1,36 @@
+package practiceProblems;
+
+public class RemoveNthFromEnd {
+
+	// https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+	private static ListNode solution1(ListNode head, int n) {
+		ListNode curr = head;
+		int len = 0;
+		while (curr != null) {
+			++len;
+			curr = curr.next;
+		}
+		System.out.println("Length: " + len);
+		int i = len - n;
+		ListNode prev = null;
+		curr = head;
+		for (int j = 1; j <= i; ++j) {
+			prev = curr;
+			curr = curr.next;
+		}
+		prev.next = curr.next;
+		curr.next = null;
+				
+		//System.out.println("Prev: " + prev.val + " Curr: " + curr.val);
+		return head;
+	}
+
+	public static void main(String[] args) {
+		int[] arr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		ListNode node = new ListNode();
+		node = node.createList(arr);
+		node = solution1(node, 3);
+		node.printList(node);
+	}
+
+}
