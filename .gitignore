@@ -1,0 +1,17 @@
+
+*.launch
+.metadata/.plugins/org.eclipse.core.resources/.history/32/d010683ac91a001c1214e52e58ccad4d
+.metadata/.log
+*.dat
+*.history
+*.index
+*.png
+.metadata/version.ini
+*.snap
+*.dat
+*.resources
+*.dat
+*.index
+.metadata/.plugins/org.eclipse.jdt.core/2173162792.index
+.metadata/.plugins/org.eclipse.jdt.core/3506097468.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Linear List/.indexes/e4/f1/history.index
